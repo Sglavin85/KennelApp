@@ -1,0 +1,113 @@
+{
+  "employees": [
+    {
+      "id": 1,
+      "name": "Jessica Younker"
+    },
+    {
+      "id": 2,
+      "name": "Jordan Nelson"
+    },
+    {
+      "id": 3,
+      "name": "Zoe LeBlanc"
+    },
+    {
+      "id": 4,
+      "name": "Blaise Roberts"
+    }
+  ],
+  "locations": [
+    {
+      "id": 1,
+      "name": "Nashville North",
+      "address": "500 Circle Way"
+    },
+    {
+      "id": 2,
+      "name": "Nashville South",
+      "address": "10101 Binary Court"
+    }
+  ],
+  "animals": [
+    {
+      "id": 1,
+      "name": "Maddie",
+      "breed": "Pointer"
+    },
+    {
+      "id": 2,
+      "name": "Minnie",
+      "breed": "Great Dane"
+    },
+    {
+      "id": 3,
+      "name": "Zues",
+      "breed": "Pug"
+    }
+  ],
+  "owners": [
+    {
+      "id": 1,
+      "name": "Ryan Tanay",
+      "phoneNumber": "779-343-1234"
+    },
+    {
+      "id": 2,
+      "name": "Emma Beaton",
+      "phoneNumber": "779-343-5224"
+    },
+    {
+      "id": 3,
+      "name": "Dani Adkins",
+      "phoneNumber": "343-234-5325"
+    },
+    {
+      "id": 4,
+      "name": "Adam Oswalt",
+      "phoneNumber": "779-324-4252"
+    },
+    {
+      "id": 5,
+      "name": "Fletcher Bangs",
+      "phoneNumber": "532-532-1324"
+    },
+    {
+      "id": 6,
+      "name": "Angela Lee",
+      "phoneNumber": "864-542-4262"
+    }
+  ],
+  "ownerAnimal": [
+    {
+      "id": 1,
+      "ownerId": 1,
+      "animalId": 1
+    },
+    {
+      "id": 2,
+      "ownerId": 2,
+      "animalId": 1
+    },
+    {
+      "id": 3,
+      "ownerId": 3,
+      "animalId": 2
+    },
+    {
+      "id": 4,
+      "ownerId": 4,
+      "animalId": 2
+    },
+    {
+      "id": 5,
+      "ownerId": 5,
+      "animalId": 3
+    },
+    {
+      "id": 6,
+      "ownerId": 6,
+      "animalId": 3
+    }
+  ]
+}

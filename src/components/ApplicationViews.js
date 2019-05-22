@@ -3,67 +3,92 @@ import React, { Component } from "react"
 import AnimalList from './animal/AnimalList'
 import LocationList from './location/LocationList'
 import EmployeeList from './employee/EmployeeList'
+import OwnerList from './owner/OwnerList'
+import AnimalManager from "../modules/AnimalManager"
+import OwnerManager from '../modules/OwnerManager'
+import EmployeeManager from '../modules/EmployeeManager'
+import LocationManager from '../modules/LocationManager'
 
 
 class ApplicationViews extends Component {
-    employeesFromAPI = [
-        { id: 1, name: "Jessica Younker" },
-        { id: 2, name: "Jordan Nelson" },
-        { id: 3, name: "Zoe LeBlanc" },
-        { id: 4, name: "Blaise Roberts" }
-    ]
-
-    locationsFromAPI = [
-        { id: 1, name: "Nashville North", address: "500 Circle Way" },
-        { id: 2, name: "Nashville South", address: "10101 Binary Court" }
-    ]
-
-    animalsFromAPI = [
-        { id: 1, name: "Doodles" },
-        { id: 2, name: "Jack" },
-        { id: 3, name: "Angus" }
-    ]
-
-    ownersFromAPI = [
-        { id: 1, name: "Ryan Tanay" },
-        { id: 2, name: "Emma Beaton" },
-        { id: 3, name: "Dani Adkins" },
-        { id: 4, name: "Adam Oswalt" },
-        { id: 5, name: "Fletcher Bangs" },
-        { id: 6, name: "Angela Lee" }
-    ]
-
-    ownerAnimalJoin = [
-        { id: 1, ownerId: 1, animalId: 1 },
-        { id: 2, ownerId: 2, animalId: 1 },
-        { id: 3, ownerId: 3, animalId: 2 },
-        { id: 4, ownerId: 4, animalId: 2 },
-        { id: 5, ownerId: 5, animalId: 3 },
-        { id: 6, ownerId: 6, animalId: 3 }
-    ]
 
     state = {
-        employees: this.employeesFromAPI,
-        locations: this.locationsFromAPI,
-        animals: this.animalsFromAPI,
-        owners: this.ownersFromAPI,
-        relationships: this.ownerAnimalJoin
+        employees: [],
+        locations: [],
+        animals: [],
+        owners: []
     }
+
+    async componentDidMount() {
+        try {
+            const newState = {
+                animals: await AnimalManager.getAll(),
+                owners: await OwnerManager.getAll(),
+                employees: await EmployeeManager.getAll(),
+                locations: await LocationManager.getAll()
+            }
+            this.setState(newState)
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
+
+    //function contructor
+    functionPackage(mod, resource) {
+
+        return {
+            delete: (id) => {
+                return mod.removeAndList(id)
+                    .then(response => this.setState({
+                        [resource]: response
+                    })
+                    )
+            },
+            edit: (obj, id) => {
+                return mod.editAndList(obj, id)
+                    .then(response => this.setState({
+                        [resource]: response
+                    })
+                    )
+            },
+            add: (obj) => {
+                return mod.addAndList(obj)
+                    .then(response => this.setState({
+                        [resource]: response
+                    })
+                    )
+            }
+        }
+    }
+
+
 
     render() {
         return (
             <React.Fragment>
                 <Route path="/locations" render={(props) => {
-                    return <LocationList locations={this.state.locations} />
+                    return <LocationList
+                        locations={this.state.locations}
+                        //calls function contructor and passes an object of CRUD functions to child as prop
+                        functions={this.functionPackage(LocationManager, "locations")} />
                 }} />
                 <Route path="/animals" render={(props) => {
                     return <AnimalList
                         animals={this.state.animals}
+                        functions={this.functionPackage(AnimalManager, "animals")}
                         owners={this.state.owners}
-                        relationships={this.state.relationships} />
+                    />
                 }} />
                 <Route path="/employees" render={(props) => {
-                    return <EmployeeList employees={this.state.employees} />
+                    return <EmployeeList
+                        employees={this.state.employees}
+                        functions={this.functionPackage(EmployeeManager, "employees")} />
+                }} />
+                <Route path="/owners" render={(props) => {
+                    return <OwnerList
+                        owners={this.state.owners}
+                        functions={this.functionPackage(OwnerManager, "owners")} />
                 }} />
             </React.Fragment>
         )
