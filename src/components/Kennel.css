@@ -3,3 +3,7 @@
     justify-content: space-around;
     flex-direction: row;
 }
+
+.body{
+    background-color: rgba(186, 231, 231, 0.774);
+}

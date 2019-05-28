@@ -1,0 +1,67 @@
+.employee {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 5px;
+}
+
+.employeeText{
+    font-size: 22px;
+}
+
+.assignedAnimals {
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    height: 350px;
+    padding: 0;
+
+}
+
+.btnDiv {
+    margin-top: 10px;
+}
+.employeeDetailBack {
+    margin-top: 40px;
+}
+
+.employeeAnimalcard {
+    padding: 0;
+    border-right: solid black 2px;
+    border-left: solid black 2px;
+    margin: 5px -1px 10px -1px;
+    min-height:  300px;
+}
+
+.employee {
+    min-width: 400px;
+}
+
+.employees {
+    width: 20vw;
+    min-height: 40vh;
+    min-width: 600px;
+    padding: 20px;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: space-between;
+    background-color: rgba(237, 243, 243, 0.7);
+    border-radius: 10px;
+    border: 2px solid rgba(0, 0, 0, 0.404);
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+.employees h1 {
+    text-align: center;
+    text-decoration-line: underline;
+}
+
+h1 {
+    text-decoration-line: underline;
+}
+
+#addEmployee {
+    width: 10vw;
+    align-self: center
+}

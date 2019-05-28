@@ -2,19 +2,43 @@
   "employees": [
     {
       "id": 1,
-      "name": "Jessica Younker"
+      "name": "Jessica Younker",
+      "address": "349 Ellington Place",
+      "city": "Nashville",
+      "state": "TN",
+      "phone": "394-321-3414",
+      "email": "jess@gmailkhgiy.com",
+      "locationsId": 1
     },
     {
       "id": 2,
-      "name": "Jordan Nelson"
+      "name": "Jordan Nelson",
+      "address": "349 Ellington Place",
+      "city": "Nashville",
+      "state": "TN",
+      "phone": "394-321-3414",
+      "email": "jess@gmail.com",
+      "locationsId": 1
     },
     {
       "id": 3,
-      "name": "Zoe LeBlanc"
+      "name": "Zoe LeBlanc",
+      "address": "349 Ellington Place",
+      "city": "Nashville",
+      "state": "TN",
+      "phone": "394-321-3414",
+      "email": "jess@gmail.com",
+      "locationsId": 2
     },
     {
       "id": 4,
-      "name": "Blaise Roberts"
+      "name": "Blaise Roberts",
+      "address": "349 Ellington Place",
+      "city": "Nashville",
+      "state": "TN",
+      "phone": "394-321-3414",
+      "email": "jess@gmail.com",
+      "locationsId": 2
     }
   ],
   "locations": [
@@ -33,17 +57,32 @@
     {
       "id": 1,
       "name": "Maddie",
-      "breed": "Pointer"
+      "breed": "Pointer",
+      "employeeId": 2
     },
     {
       "id": 2,
       "name": "Minnie",
-      "breed": "Great Dane"
+      "breed": "Great Dane",
+      "employeeId": 1
     },
     {
       "id": 3,
-      "name": "Zues",
-      "breed": "Pug"
+      "name": "Zeus",
+      "breed": "Pug",
+      "employeeId": 1
+    },
+    {
+      "name": "Mr. Snuggles",
+      "breed": "Black Lab",
+      "employeeId": 3,
+      "id": 4
+    },
+    {
+      "name": "Pippen",
+      "breed": "Basset Hound",
+      "employeeId": 1,
+      "id": 5
     }
   ],
   "owners": [

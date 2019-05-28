@@ -1,16 +1,57 @@
 .animals {
     display: flex;
     justify-content: space-evenly;
+    flex-wrap: wrap;
+    overflow: wrap;
+    min-height: 400px;
 }
+
+html {
+    width: 100vw;
+    background-color: rgba(186, 231, 231, 0.774);
+}
+
 
 .icon--dog {
     width: 50px;
     height: 50px;
 }
 
+.form {
+    background-color: rgba(186, 231, 231, 0.774);
+    padding-top: 20px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+}
+
+.form-group{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 500px;
+}
+
+label {
+    margin-right: 1vw;
+}
 .card {
     width: 20em;
-    background-color: rgba(186, 231, 231, 0.774);
+    border-radius: 10px;
+    border: 2px rgba(0, 0, 0, 0.404) solid;
+    background-color: rgba(237, 243, 243, 0.7);
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    margin: 0 10px 20px 10px;
+    top: -3vw;
+}
+
+.form-control {
+    width: 15vw;
 }
 
 .card-title {
@@ -20,6 +61,9 @@
     flex-direction: column;
 }
 
+.animals{
+    padding-top: 5vw;
+}
 .card-link {
     margin: 12px 0 0 0;
     font-size: 0.7em;
@@ -27,10 +71,10 @@
 
 .animalButton {
     display: flex;
+    padding-top: 20px;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-    margin: 0 0 10px 0;
   }
 
   #add{
@@ -43,9 +87,91 @@
     background-color: green;
     color: white;
     margin: 5px;
+    border: none;
+    min-height: 3vh;
+}
+
+#root{
+    background-color: rgba(186, 231, 231, 0.774);
+}
+
+.green:hover {
+    color: white;
+    text-decoration-line: none;
+}
+.red {
+    background-color: red
 }
 
 .dog {
     height: 40%;
     width: 40%;
+}
+
+.modal {
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    display: block;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.detailCardBody, .form {
+    background-color: rgba(237, 243, 243, 0.7);
+    padding: 20px;
+    max-width: 40%;
+    min-height: 30%;
+    margin: 30px auto;
+    border-radius: 10px;
+    border: 2px solid rgba(0, 0, 0, 0.404);
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+.modalCard {
+    height: 40%;
+    min-height: 200px;
+    width: 40%;
+    top: 140px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    border: 1px solid #888;
+    animation-name: animatetop;
+    animation-duration: 0.7s;
+    border-radius: 1em;
+}
+
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top: 140px; opacity:1}
+  }
+
+.modalCard h1 {
+  text-align: center;
+  }
+
+.noBtn, .yesBtn {
+    width: 20%;
+}
+
+.detailCard {
+    width: 100vw;
+    height: 100vh;
+}
+
+.detailCardBody {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.detailImg {
+    width: 40%;
+    height: 40%;
 }

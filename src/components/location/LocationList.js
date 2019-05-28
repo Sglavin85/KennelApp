@@ -4,11 +4,12 @@ export default class Kennel extends Component {
     render() {
         return (
             <section className="locations">
+                <h1>Locations</h1>
                 {
                     this.props.locations.map(location =>
-                        <div key={location.id}>
-                            <h1>{location.name}</h1>
-                            <h2>{location.address}</h2>
+                        <div className="locations" key={location.id}>
+                            <h2>{location.name}</h2>
+                            <h3>{location.address}</h3>
                             <br />
                         </div>
                     )

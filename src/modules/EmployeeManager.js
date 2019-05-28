@@ -6,7 +6,7 @@ export default {
             .then(response => response.json())
     },
     getAll() {
-        return fetch(`${constants.remoteURL}/employees`)
+        return fetch(`${constants.remoteURL}/employees?_expand=locations`)
             .then(response => response.json())
     },
     removeAndList(id) {

@@ -7,7 +7,7 @@ export default class AnimalsList extends Component {
     render() {
         return (
             <>
-                <div className="animalButton">
+                <div className="animalButton animal">
                     <h1>Animals</h1>
                     <button type="button"
                         id="add"
@@ -20,11 +20,11 @@ export default class AnimalsList extends Component {
             </button>
                 </div>
                 <div>
-                    <section className="animals">
+                    <section className="animals animal">
                         {
                             this.props.animals.map(animal =>
                                 <div key={animal.id} className="card">
-                                    <AnimalCards
+                                    <AnimalCards {...this.props}
                                         animal={animal}
                                         owner={this.props.owners}
                                         delete={this.props.functions.delete}
